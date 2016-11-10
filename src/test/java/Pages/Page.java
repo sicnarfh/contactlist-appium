@@ -14,9 +14,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by francish on 10/11/16.
- */
 public class Page {
 
     /**

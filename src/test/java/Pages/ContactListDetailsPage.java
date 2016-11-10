@@ -7,9 +7,6 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertNotNull;
 
-/**
- * Created by francish on 10/11/16.
- */
 public class ContactListDetailsPage extends Page {
 
     public ContactListDetailsPage(){
