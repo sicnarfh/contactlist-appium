@@ -14,7 +14,7 @@ public class ContactListDetailsPage extends Page {
     }
 
     public String getContactName(){
-        MobileElement table = getDriver().findElementByClassName("UIATableView");
+        MobileElement table = (MobileElement) getDriver().findElementByClassName("UIATableView");
         assertNotNull(table);
 
         List<MobileElement> rows = table.findElementsByClassName("UIATableCell");

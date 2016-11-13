@@ -2,3 +2,4 @@ app/
 .idea
 contactlist-appium.iml
 screenshots/
+target/
