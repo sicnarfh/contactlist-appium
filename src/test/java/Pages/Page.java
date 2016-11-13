@@ -54,6 +54,10 @@ public class Page {
         return driver;
     }
 
+    public void loadPage(){
+        PageFactory.initElements(new AppiumFieldDecorator(getDriver()), this);
+    }
+
     private void setupiOSDesiredCapabilities () {
         File app = new File("app/ContactList.app");
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -91,9 +95,5 @@ public class Page {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void loadPage(){
-        PageFactory.initElements(new AppiumFieldDecorator(getDriver()), this);
     }
 }

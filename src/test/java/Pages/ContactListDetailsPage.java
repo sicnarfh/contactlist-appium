@@ -1,6 +1,9 @@
 package Pages;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.remote.MobilePlatform;
 import org.junit.rules.TestName;
 
 import java.util.List;
@@ -9,17 +12,15 @@ import static junit.framework.TestCase.assertNotNull;
 
 public class ContactListDetailsPage extends Page {
 
+    @AndroidFindBy(id = "nz.co.kiwiandroiddev.materialcontactlist:id/fragment_contact_details_name")
+    @iOSFindBy(id = "contactDetailsTableNameRow")
+    MobileElement nameRow;
+
     public ContactListDetailsPage(){
-        super();
+        loadPage();
     }
 
     public String getContactName(){
-        MobileElement table = (MobileElement) getDriver().findElementByClassName("UIATableView");
-        assertNotNull(table);
-
-        List<MobileElement> rows = table.findElementsByClassName("UIATableCell");
-        List<MobileElement> nameRow = rows.get(0).findElementsByClassName("UIAStaticText");
-
-        return nameRow.get(1).getAttribute("name");
+        return nameRow.getAttribute("name");
     }
 }
